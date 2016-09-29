@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : "Cafe Automatico" %></title>
+    <meta name="description" content="Cafe Automatico">
+    <meta name="name" content="Cafe Automatico">
+    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+      <%= yield %> 
+    <%= render partial: "layouts/footer" %>     
+  </body>
+</html>
